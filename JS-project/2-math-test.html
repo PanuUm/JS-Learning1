@@ -1,0 +1,70 @@
+<!-- Math 2 (link>> https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Test_your_skills:_Math)
+  
+In the second task, you are provided with two calculations with the results stored in the variables result and result2. 
+You need to take the calculations, multiply them, and format the result to two decimal places.
+
+Try updating the live code below to recreate the finished example by following these steps:
+
+1. Multiply result and result2 and assign the result back to result (use assignment shorthand).
+2. Format result so that it has two decimal places and store it in a variable called finalResult.
+3. Check the data type of finalResult using typeof. If it's a string, convert it to a number type and store the result in a variable called finalNumber.
+
+To pass this test, finalNumber should have a result of 4633.33. -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Math: Task 2</title>
+    <style>
+      p {
+        color: purple;
+        margin: 0.5em 0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+    </style>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+
+  <body>
+
+    <section class="preview">
+
+
+
+    </section>
+
+  </body>
+  <script>
+    // Final result should be 4633.33
+    // Add/update your code here
+
+    let result = 7 + 13 / 9 + 7;
+    let result2 = 100 / 2 * 6;
+
+    let finalResult;
+    let finalNumber;
+
+    resultFix = result *= result2;
+    finalResult = resultFix.toFixed(2);
+
+    finalNumber = Number(finalResult);
+
+    // Don't edit the code below here!
+
+    const section = document.querySelector('section');
+
+    const para1 = document.createElement('p');
+    para1.textContent = `Your finalResult is ${ finalResult }`;
+    const para2 = document.createElement('p');
+    const finalNumberCheck = isNaN(finalNumber) === false ? 'finalNumber is a number type. Well done!' : `Ooops! finalNumber is not a number.`;
+    para2.textContent = finalNumberCheck;
+
+    section.appendChild(para1);
+    section.appendChild(para2);
+  </script>
+
+</html>
