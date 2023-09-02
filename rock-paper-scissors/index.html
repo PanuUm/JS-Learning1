@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project: Rock Paper Scissors</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <h2>Rock Paper Scissors Game</h2>
+
+    <div>Game remain :<p id="remain">5</p></div>
+    
+    <div class="score"> 
+        <div >Player score :<p class="pScore" id="pScore">0</p></div>
+        <div >Computer score :<p class="cScore" id="cScore">0</p></div>
+    </div>
+    
+    <div>
+        <button  id="rock" onclick="game('rock')">Rock</button>
+        <button  id="paper" onclick="game('paper')">Paper</button>
+        <button  id="scissors" onclick="game('scissors')">Scissors</button>
+    </div>
+    
+<!-- show what you choose -->
+    <p id="result"></p>
+
+<!-- Show Who win -->
+    <p id="winner"></p>
+
+    <a href="javascript:location.reload(true)" > 
+        <button id="refresh" class="refresh"> RESTART GAME</button>
+    </a>
+    
+    <script src="script.js"></script>
+</body>
+</html>

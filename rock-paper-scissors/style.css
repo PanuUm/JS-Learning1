@@ -1,0 +1,18 @@
+body {
+    font-family:  Helvetica, Arial, sans-serif;
+    color:dimgrey
+} 
+    
+.refresh {
+    background-color:cadetblue ;
+    color: #fff;
+    padding: 5px 15px;
+    text-decoration: none;
+    border: solid 1px #000;
+    border-radius: 5px;
+    display: none
+}
+
+a {
+    text-decoration: none;
+}
