@@ -1,5 +1,6 @@
 
-function buildGrid(x, y, cellSize, gridElement) {
+function buildGrid(x, y, cellSize) {
+  const gridElement = document.querySelector(".container")
     gridElement.style.display = "grid";
     gridElement.style.gridTemplateColumns = `repeat(${x}, ${cellSize}px)`;
     gridElement.style.gridTemplateRows = `repeat(${y}, ${cellSize}px)`;
@@ -11,12 +12,11 @@ function buildGrid(x, y, cellSize, gridElement) {
       square.className = 'square';
       squares.appendChild(square);
     }
-  
+    gridElement.innerHTML = '';
     gridElement.appendChild(squares);
 }
   
-buildGrid(16, 16, 40,  
-    document.querySelector(".container"));
+buildGrid(16, 16, 40);
 
 function openPrompt() {
   let customGrid = prompt("Please enter you grid size", );
@@ -24,8 +24,7 @@ function openPrompt() {
     const _number = Number(customGrid);
     if (!isNaN(_number) && typeof _number === 'number') {
       if (Number.isInteger(_number)) {
-        buildGrid(customGrid, customGrid, 640/customGrid,  
-          document.querySelector(".container"));
+        buildGrid(customGrid, customGrid, 640/customGrid);
       }else{
         alert ( "Please enter the integer number!")
       }
