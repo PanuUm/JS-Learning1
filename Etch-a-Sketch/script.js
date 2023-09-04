@@ -6,7 +6,7 @@ function buildGrid(x, y, cellSize, gridElement) {
    
     let squares = new DocumentFragment();
   
-    for (let i = 0; i < x * y; i++) {
+    for (let i = 0; i < (x * y); i++) {
       let square = document.createElement('div');
       square.className = 'square';
       squares.appendChild(square);
@@ -18,8 +18,19 @@ function buildGrid(x, y, cellSize, gridElement) {
 buildGrid(16, 16, 40,  
     document.querySelector(".container"));
 
-// 8bit = 8, 8, 80
-// 16bit = 16, 16, 40
-// 64bit = 64, 64, 10
-
-    
+function openPrompt() {
+  let customGrid = prompt("Please enter you grid size", );
+  if (customGrid != null) {
+    const _number = Number(customGrid);
+    if (!isNaN(_number) && typeof _number === 'number') {
+      if (Number.isInteger(_number)) {
+        buildGrid(customGrid, customGrid, 640/customGrid,  
+          document.querySelector(".container"));
+      }else{
+        alert ( "Please enter the integer number!")
+      }
+    } else {
+      alert ( "Input the number please!")
+    }
+  } 
+}

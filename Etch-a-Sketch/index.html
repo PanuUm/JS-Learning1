@@ -8,9 +8,16 @@
 </head>
 <body>
 
-    <button id="8bit" >8-BIT</button>
-    <button id="16bit" >16-BIT</button>
-    <button id="64bit" >64-BIT</button>
+    <button id="8bit" onclick="buildGrid(8, 8, 80,  
+    document.querySelector('.container'));">8-BIT</button>
+
+    <button id="16bit" onclick="buildGrid(16, 16, 40,  
+    document.querySelector('.container'));">16-BIT</button>
+
+    <button id="64bit" onclick="buildGrid(64, 64, 10,  
+    document.querySelector('.container'));">64-BIT</button>
+
+    <button id="custom" onclick="openPrompt()">Custom</button>
 
     <div class="container">
     </div>
