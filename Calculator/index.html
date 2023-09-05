@@ -11,29 +11,29 @@
 
         <div class="display"></div>
         <div class="calculator-btn">
-            <button onclick="display.innerHTML = '' " class="btnClear">C</button>
+            <button onclick="window.location.reload()" class="btnClear">C</button>
             <button class="btnDel">Del</button>
             <button class="btnOpe">%</button>
-            <button onclick="display.innerHTML += '÷'" class="btnOperator">÷</button>
+            <button onclick="changeOperator(value)" value="/" class="btnOperator">÷</button>
             
-            <button onclick="display.innerHTML += 7" class="btnNum" id="_7">7</button>
-            <button onclick="display.innerHTML += 8" class="btnNum">8</button>
-            <button onclick="display.innerHTML += 9" class="btnNum">9</button>
-            <button onclick="display.innerHTML += 'x'" class="btnOperator">x</button>
+            <button onclick="changeNum(value)" value="7" class="btnNum">7</button>
+            <button onclick="changeNum(value)" value="8" class="btnNum">8</button>
+            <button onclick="changeNum(value)" value="9" class="btnNum">9</button>
+            <button onclick="changeOperator(value)" value="*" class="btnOperator">x</button>
             
-            <button onclick="display.innerHTML += 4" class="btnNum">4</button>
-            <button onclick="display.innerHTML += 5" class="btnNum">5</button>
-            <button onclick="display.innerHTML += 6" class="btnNum">6</button>
-            <button onclick="display.innerHTML += '-'" class="btnOperator">-</button>
+            <button onclick="changeNum(value)" value="4" class="btnNum">4</button>
+            <button onclick="changeNum(value)" value="5" class="btnNum">5</button>
+            <button onclick="changeNum(value)" value="6" class="btnNum">6</button>
+            <button onclick="changeOperator(value)" value="-" class="btnOperator">-</button>
             
-            <button onclick="display.innerHTML += 1;" class="btnNum">1</button>
-            <button onclick="display.innerHTML += 2" class="btnNum">2</button>
-            <button onclick="display.innerHTML += 3" class="btnNum">3</button>
-            <button onclick="display.innerHTML += '+'" class="btnOperator">+</button>
+            <button onclick="changeNum(value)" value="1" class="btnNum">1</button>
+            <button onclick="changeNum(value)" value="2" class="btnNum">2</button>
+            <button onclick="changeNum(value)" value="3" class="btnNum">3</button>
+            <button onclick="changeOperator(value)" value="+" class="btnOperator">+</button>
             
-            <button onclick="display.innerHTML += 0" class="btnNum">0</button>
-            <button onclick="display.innerHTML += '.'" class="btnNum">.</button>
-            <button class="btnEqu">=</button>
+            <button onclick="changeNum(value)" value="0" class="btnNum">0</button>
+            <button onclick="changeNum(value)" value="." class="btnNum">.</button>
+            <button onclick="operate()" class="btnEqu">=</button>
         </div>
     </div>
         

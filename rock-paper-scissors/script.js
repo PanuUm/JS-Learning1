@@ -5,6 +5,7 @@ let remain = 5;
 let pScore = 0;
 let cScore = 0;
 
+// function-1
 function getComputerChoice(choice) {
     return choice[Math.floor(Math.random()*choice.length)];
 };
@@ -53,7 +54,6 @@ function playRound(playerSelection, computerSelection) {
 };
 
 // function-3
-// playerSelection = 
 game(); 
 function game(choose = 'Choose your answer') {
     if (remain == 0) {
