@@ -30,7 +30,7 @@ function percent(firstNum, secondNum) {
 }
 
 function changeNum(value) {
-    if (result && operator === '') {
+    if (result && operator == '') {
         firstNum = '';
         display.innerHTML = '';
     }
@@ -63,20 +63,34 @@ function operate() {
     } else {
         if(operator == '+') {
             add(parseFloat(firstNum), parseFloat(secondNum));
-            console.log(firstNum, secondNum, result);            
+            console.log(firstNum, operator, secondNum, '=', result);            
         } else if(operator == '-') {
             subtract(parseFloat(firstNum), parseFloat(secondNum));
-            console.log(firstNum, secondNum);
+            console.log(firstNum, operator, secondNum, '=', result);
         } else if(operator == '*') {
             multiply(parseFloat(firstNum), parseFloat(secondNum));
-            console.log(firstNum, secondNum);
+            console.log(firstNum, operator, secondNum, '=', result);
         } else if(operator == '/') {
             divide(parseFloat(firstNum), parseFloat(secondNum));
-            console.log(firstNum, secondNum);
+            console.log(firstNum, operator, secondNum, '=', result);
         }
         display.innerHTML = result;
         firstNum = result;
         operator = '';
         secondNum = '';
+    }
+}
+
+function deleteNum() {
+    if (firstNum === '' || operator === '') {
+        firstNum = firstNum.slice(0, -1);
+        display.innerHTML = firstNum;
+        console.log('firstNum', firstNum, typeof firstNum);
+        return firstNum;
+    } else {
+        secondNum = secondNum.slice(0, -1);
+        display.innerHTML = firstNum + operator + secondNum;
+        console.log('secondNum', secondNum, typeof secondNum);
+        return secondNum;
     }
 }
