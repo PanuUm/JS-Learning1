@@ -7,43 +7,48 @@ const display = document.querySelector('.display');
 let firstNum = '';
 let secondNum = '';
 let operator = '';
+let result = '';
 
 function add(firstNum, secondNum) {
-    return firstNum + secondNum;
+    result = firstNum + secondNum;
 }
 
 function subtract(firstNum, secondNum) {
-    return firstNum - secondNum;
+    result = firstNum - secondNum;
 }
 
 function multiply(firstNum, secondNum) {
-    return firstNum * secondNum;
+    result = firstNum * secondNum;
 }
 
 function divide(firstNum, secondNum) {
-    return firstNum / secondNum;
+    result = firstNum / secondNum;
 }
 
 function percent(firstNum, secondNum) {
-    return secondNum = (secondNum / firstNum) * 100;
+    result = secondNum = (secondNum / firstNum) * 100;
 }
 
 function changeNum(value) {
+    if (result && operator === '') {
+        firstNum = '';
+        display.innerHTML = '';
+    }
     if (firstNum === '' || operator === '') {
         firstNum += value;
         display.innerHTML += value;
-        console.log('firstNum', firstNum);
+        console.log('firstNum', firstNum, typeof firstNum);
         return firstNum;
     } else {
         secondNum += value;
         display.innerHTML += value;
-        console.log('secondNum', secondNum);
+        console.log('secondNum', secondNum, typeof secondNum);
         return secondNum;
     }
 }
 
 function changeOperator(value) {
-    if ( firstNum != 'number') {
+    if ( firstNum ) {
         operator += value;
         display.innerHTML += value;
         console.log('operator', operator, typeof (operator));
@@ -51,18 +56,27 @@ function changeOperator(value) {
     } 
 }
 
-function operate(firstNum, operator, secondNum) {
-    
+function operate() {
 
-    if(firstNum === '' || operator === '' || secondNum === '') {
+    if(firstNum === '' && operator === '' && secondNum === '') {
         return;
-    } else if (firstNum != '' || operator != '' || secondNum != '') {
-        if(operate = '+') {
-            display.innerHTML = add(firstNum, secondNum);
+    } else {
+        if(operator == '+') {
+            add(parseFloat(firstNum), parseFloat(secondNum));
+            console.log(firstNum, secondNum, result);            
+        } else if(operator == '-') {
+            subtract(parseFloat(firstNum), parseFloat(secondNum));
             console.log(firstNum, secondNum);
-        } else if(operate = '-') {
-            display.innerHTML = subtract(firstNum, secondNum);
+        } else if(operator == '*') {
+            multiply(parseFloat(firstNum), parseFloat(secondNum));
+            console.log(firstNum, secondNum);
+        } else if(operator == '/') {
+            divide(parseFloat(firstNum), parseFloat(secondNum));
             console.log(firstNum, secondNum);
         }
+        display.innerHTML = result;
+        firstNum = result;
+        operator = '';
+        secondNum = '';
     }
 }
