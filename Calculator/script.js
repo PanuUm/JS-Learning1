@@ -94,3 +94,17 @@ function deleteNum() {
         return secondNum;
     }
 }
+
+function negative() {
+    if (firstNum === '' || operator === '') {
+        firstNum = firstNum * -1;
+        display.innerHTML = firstNum;
+        console.log('firstNum', firstNum, typeof firstNum);
+        return firstNum;
+    } else {
+        secondNum = secondNum * -1;
+        display.innerHTML = firstNum + operator + secondNum;
+        console.log('secondNum', secondNum, typeof secondNum);
+        return secondNum;
+    }
+}
