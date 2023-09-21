@@ -10,16 +10,20 @@
 
     <dialog id="addBook">
         <h3>Add book</h3>
-        <form onsubmit="book()">
+        <form onsubmit="book(title, author, read)">
           <p>
-            <label for="title">Book title:</label><br>
+            Book title:<br>
             <input type="text" id="title" placeholder="Book title"><br>
             
-            <label for="author">Author:</label><br>
+            Author:<br>
             <input type="text" id="author" placeholder="Author"><br><br>
             
-            <input type="checkbox" id="read" name="read" value="">
-            <label for="read"> Have you read it?</label><br>
+             Have you read it?<br>
+            <select type="checkbox" id="read" name="read">
+                <option value="default">Choose…</option>
+                <option value="yes">Already read</option>
+                <option value="no">I haven't read it yet</option>
+            </select>
           </p>
           <div>
             <button value="cancel" formmethod="dialog">Cancel</button>
@@ -31,6 +35,8 @@
       <p>
         <button id="showDialog">Add book</button>
       </p>
+
+      <div class="bookshelf"></div>
 
 
     <script src="script.js"></script>
