@@ -10,20 +10,20 @@
 
     <dialog id="addBook">
         <h3>Add book</h3>
-        <form>
+        <form onsubmit="book()">
           <p>
             <label for="title">Book title:</label><br>
-            <input type="text" id="bookTitle" name="bookTitle" value=""><br>
+            <input type="text" id="title" placeholder="Book title"><br>
             
             <label for="author">Author:</label><br>
-            <input type="text" id="author" name="author" value=""><br><br>
+            <input type="text" id="author" placeholder="Author"><br><br>
             
-            <input type="checkbox" id="read" name="read" value="read">
-            <label for="vehicle1"> Have you read it?</label><br>
+            <input type="checkbox" id="read" name="read" value="">
+            <label for="read"> Have you read it?</label><br>
           </p>
           <div>
             <button value="cancel" formmethod="dialog">Cancel</button>
-            <button id="confirmBtn" value="default">Confirm</button>
+            <input type="submit" value="Submit" id="submit">
           </div>
         </form>
       </dialog>
