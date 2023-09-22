@@ -8,36 +8,34 @@
 </head>
 <body>
 
-    <dialog id="addBook">
-        <h3>Add book</h3>
-        <form onsubmit="book(title, author, read)">
-          <p>
-            Book title:<br>
-            <input type="text" id="title" placeholder="Book title"><br>
-            
-            Author:<br>
-            <input type="text" id="author" placeholder="Author"><br><br>
-            
-             Have you read it?<br>
-            <select type="checkbox" id="read" name="read">
-                <option value="default">Choose…</option>
-                <option value="yes">Already read</option>
-                <option value="no">I haven't read it yet</option>
-            </select>
-          </p>
-          <div>
-            <button value="cancel" formmethod="dialog">Cancel</button>
-            <input type="submit" value="Submit" id="submit">
-          </div>
-        </form>
-      </dialog>
+  <div class="container">
+    <div class="row mt-5">
+      <div class="col-md-3">
+        <label for="bookTitle">Enter Book Title</label>
+        <input type="text" class="form-control" id="bookTitle">
+      </div>
+      <div class="col-md-3">
+        <label for="author">Enter Author</label>
+        <input type="text" class="form-control" id="author">
+      </div>
+      <div class="col-md-3">
+        <label for="read">Have you read it?</label>
+        <select type="checkbox" id="read" name="read">
+          <option value="default">Choose…</option>
+          <option value="yes">Already read</option>
+          <option value="no">I haven't read it yet</option>
+      </select>
+      </div>
+    </div>
     
-      <p>
-        <button id="showDialog">Add book</button>
-      </p>
-
-      <div class="bookshelf"></div>
-
+    <div class="row mt-5">
+      <div class="col-md-12 text-center">
+        <button type="button" id="btn-add" class="btn btn-success" onclick="addOnClick()">Add Book</button>
+      </div>
+    </div>
+  </div>
+  
+  <div id="table"></div>
 
     <script src="script.js"></script>
 </body>
