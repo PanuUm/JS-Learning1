@@ -3,17 +3,14 @@ const addBook = document.getElementById("addBook");
 
 let bookshelf = document.getElementById("bookshelf");
 
-// Show modal
-// showButton.addEventListener("click", () => {
-//     addBook.showModal();
-//   });
-
 const myLibrary = [
   {bookTitle: 'The Green Mile', 
   author: 'Stephen King', 
+  pages: '234',
   read: 'yes'},
   {bookTitle: 'Harry Potter', 
   author: 'J. K. Rowling', 
+  pages: '456',
   read: 'no'},
 ];
 
@@ -25,6 +22,7 @@ function displayBook() {
     html+="<td>"+'No.'+"</td>";
     html+="<td>"+'Title'+"</td>";
     html+="<td>"+'Author'+"</td>";
+    html+="<td>"+'Pages'+"</td>";
     html+="<td>"+'Read'+"</td>";
     html+="<td>"+'Action'+"</td>";
     html+="</tr>";
@@ -35,6 +33,7 @@ function displayBook() {
       html+="<td>"+ sno +"</td>";
       html+="<td>"+ myLibrary[i].bookTitle+"</td>";
       html+="<td>"+ myLibrary[i].author+"</td>";
+      html+="<td>"+ myLibrary[i].pages+"</td>";
       html+="<td>"+ myLibrary[i].read+"</td>";
       html+="<td>"+ `<button type="button" class="btn btn-remove" onclick='removeItem(${myLibrary[i].id})'>Remove</button>`+"</td>";
       html+="</tr>";
@@ -50,11 +49,12 @@ displayBook();
 function addOnClick() {
   let bookTitle = document.getElementById('bookTitle').value;
   let author = document.getElementById('author').value;
+  let pages = document.getElementById('pages').value;
   let read = document.getElementById('read').value;
 
   if (bookTitle && author && read) {
     let id= myLibrary.length +1;
-    myLibrary.push({bookTitle:bookTitle, author:author, read:read, id:id})
+    myLibrary.push({bookTitle:bookTitle, author:author, pages:pages, read:read, id:id})
     displayBook();
     clearItems();
   }
@@ -63,6 +63,7 @@ function addOnClick() {
 function clearItems() {
   document.getElementById('bookTitle').value ='';
   document.getElementById('author').value ='';
+  document.getElementById('PAGES').value ='';
   document.getElementById('read').value ='';
 }
 
